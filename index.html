@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Designer & Developer - Freelance Services</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1d4ed8;
+            --dark-bg: #0f172a;
+            --light-bg: #f8fafc;
+            --text-dark: #1e293b;
+            --text-gray: #64748b;
+            --text-light: #94a3b8;
+            --border-color: #e2e8f0;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 390px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            padding: 40px 0 60px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--primary-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 16px;
+            color: var(--text-gray);
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .hero-subtitle {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-bottom: 12px;
+            margin-right: 12px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(29, 78, 216, 0.15);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-bg);
+        }
+
+        .trust-line {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-avatars {
+            display: flex;
+            margin-right: 8px;
+        }
+
+        .avatar {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-left: -8px;
+        }
+
+        /* ==================== ABOUT ME SECTION ==================== */
+        .about {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+        }
+
+        .section-header .badge {
+            margin-bottom: 12px;
+        }
+
+        .section-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            font-size: 15px;
+        }
+
+        .about-content {
+            margin-bottom: 40px;
+        }
+
+        .about-text {
+            font-size: 15px;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .stat-card {
+            background: var(--light-bg);
+            padding: 24px 16px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-gray);
+            font-weight: 600;
+        }
+
+        .about-footer {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .about-link {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .service-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .service-number {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .service-icon {
+            width: 18px;
+            height: 18px;
+            color: var(--primary-blue);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .service-ideal {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        /* ==================== TECH STACK SECTION ==================== */
+        .tech {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .tech-banner {
+            background: var(--light-bg);
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--text-gray);
+            margin-bottom: 32px;
+            font-weight: 600;
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .tech-card {
+            background: var(--light-bg);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .tech-icon {
+            width: 32px;
+            height: 32px;
+            background: white;
+            margin: 0 auto 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .tech-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .tech-card p {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* ==================== PROJECTS SECTION ==================== */
+        .projects {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .project-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--primary-blue);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .project-card p {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* ==================== PROCESS SECTION ==================== */
+        .process {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .process-step {
+            background: var(--light-bg);
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .step-number {
+            font-size: 11px;
+            color: var(--primary-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .process-step p {
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ==================== WHY WORK WITH ME SECTION ==================== */
+        .why-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .why-card {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            gap: 16px;
+        }
+
+        .why-icon {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .why-content h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+        }
+
+        .why-content p {
+            font-size: 12px;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        /* ==================== TESTIMONIALS SECTION ==================== */
+        .testimonials {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .testimonial-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+
+        .testimonial-text {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-size: 11px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* ==================== PRICING SECTION ==================== */
+        .pricing {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .pricing-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .pricing-card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 24px;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .pricing-card.featured {
+            background: var(--primary-blue);
+            color: white;
+            border-color: var(--primary-blue);
+        }
+
+        .pricing-badge {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .pricing-card.featured .pricing-badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .pricing-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-card.featured h3 {
+            color: white;
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .pricing-card.featured .price {
+            color: white;
+        }
+
+        .price-period {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .pricing-card.featured .price-period {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-desc {
+            font-size: 12px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .pricing-card.featured .pricing-desc {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .pricing-features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .pricing-feature {
+            font-size: 12px;
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+        }
+
+        .feature-check {
+            color: var(--success);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .pricing-card.featured .feature-check {
+            color: white;
+        }
+
+        .pricing-card.featured .pricing-feature {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* ==================== FAQ SECTION ==================== */
+        .faq {
+            padding: 60px 0;
+            background: var(--light-bg);
+        }
+
+        .faq-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: var(--light-bg);
+        }
+
+        .faq-question h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        .faq-toggle {
+            width: 10px;
+            height: 6px;
+            border-left: 2px solid var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            transform: rotate(-45deg);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(135deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 20px;
+            font-size: 13px;
+            color: var(--text-gray);
+            line-height: 1.6;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* ==================== CONTACT FORM SECTION ==================== */
+        .contact {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .contact-intro {
+            margin-bottom: 40px;
+        }
+
+        .quick-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .contact-form {
+            background: var(--light-bg);
+            padding: 32px 24px;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            background: white;
+            color: var(--text-dark);
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(29, 78, 216, 0.15);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d1fae5;
+            color: #047857;
+        }
+
+        .form-message.error {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 60px 0 40px;
+        }
+
+        .footer-brand h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .footer-brand p {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .footer-section {
+            margin-bottom: 40px;
+        }
+
+        .footer-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-link {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: white;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            background: var(--primary-blue);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 40px 0;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .section-header h2 {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-actions {
+                flex-direction: column;
+            }
+
+            .quick-actions .btn {
+                width: 100%;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">⚡ Freelance Web Designer & Developer</div>
+            <h1>Turn Your Ideas Into Websites People Remember.</h1>
+            <p class="hero-subtitle">Your website is often the first impression people have of your business. I create modern, responsive, and conversion-focused websites that look great, work smoothly, and give your brand the online presence it deserves.</p>
+            <p>From 0 to hero on the web — without confusion, guesswork, or wasting months figuring it out alone.</p>
+            <div>
+                <button class="btn">Start Your Project →</button>
+                <button class="btn btn-secondary">View My Work</button>
+            </div>
+            <div class="trust-line">
+                <div class="trust-avatars">
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                    <div class="avatar"></div>
+                </div>
+                <span>Trusted by 30+ clients worldwide</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ME SECTION ==================== -->
+    <section class="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">👋 ABOUT ME</div>
+                <h2>I Turn Ideas Into Websites People Remember.</h2>
+            </div>
+
+            <div class="about-content">
+                <p class="about-text">I'm a freelance web designer and developer focused on creating websites that combine clean design, smooth user experiences, and practical functionality.</p>
+                <p class="about-text">Whether you need a website for your business, a personal portfolio, a landing page, or a complete web application, I help take your idea from the first concept to a finished website.</p>
+                <p class="about-text">I don't believe in creating websites just to "have a website." I build them with a purpose — to communicate your brand, showcase what you do, and help you connect with your audience.</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">10+</div>
+                    <div class="stat-label">Projects Created</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">6+</div>
+                    <div class="stat-label">Website Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Responsive Design</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">24/7</div>
+                    <div class="stat-label">Project Support</div>
+                </div>
+            </div>
+
+            <div class="about-footer">
+                <span>Let's connect</span>
+                <a href="#contact" class="about-link">Get in touch →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">🎯 SERVICES</div>
+                <h2>Websites Built Around Your Goals.</h2>
+                <p>Every business is different. Your website should be too. Choose what you need, and I'll create a digital experience that fits your brand, audience, and goals.</p>
+            </div>
+
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">01 Business Website</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>BUSINESS WEBSITE</h3>
+                    <p>Give your business a professional online presence. Modern, responsive websites designed to showcase your services, build trust, and turn visitors into enquiries.</p>
+                    <div class="service-ideal">Ideal for: Startups • Local Businesses • Agencies • Professionals</div>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">02 Portfolio Website</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>PORTFOLIO WEBSITE</h3>
+                    <p>Put your work in the spotlight. A personal portfolio that showcases your skills, projects, experience, and personality in a way that makes you memorable.</p>
+                    <div class="service-ideal">Ideal for: Freelancers • Designers • Developers • Creators • Students</div>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">03 Landing Page</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>LANDING PAGE</h3>
+                    <p>One page. One clear goal. High-impact landing pages designed around a specific objective — generating leads, promoting a service, launching a product, or driving enquiries.</p>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">04 E-Commerce Website</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>E-COMMERCE WEBSITE</h3>
+                    <p>Turn your products into an online store. Create a professional shopping experience where customers can discover your products and purchase with confidence.</p>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">05 Web Application</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>WEB APPLICATION</h3>
+                    <p>More than a website. A complete digital experience. Custom web applications built around your business requirements, workflows, and users.</p>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">06 Website Redesign</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>WEBSITE REDESIGN</h3>
+                    <p>Your website has evolved. Your website should too. Give an outdated website a modern visual identity, better user experience, improved responsiveness, and a fresh new look.</p>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-number">07 Maintenance & Support</div>
+                        <span class="service-icon">→</span>
+                    </div>
+                    <h3>MAINTENANCE & SUPPORT</h3>
+                    <p>Keep your website running smoothly. From updates and content changes to troubleshooting and ongoing improvements, get reliable support after launch.</p>
+                    <a href="#" class="about-link">Learn more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECH STACK SECTION ==================== -->
+    <section class="tech">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">🛠️ TECH STACK</div>
+                <h2>The Technology Behind the Experience.</h2>
+                <p>I use modern tools and technologies to turn designs and ideas into fast, responsive, and maintainable websites.</p>
+            </div>
+
+            <div class="tech-banner">
+                HTML • CSS • JavaScript • React • Git • GitHub • Vercel • Figma
+            </div>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">📐</div>
+                    <h4>HTML</h4>
+                    <p>The structure behind every experience.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🎨</div>
+                    <h4>CSS</h4>
+                    <p>Responsive layouts, animations, and visual design.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">⚙️</div>
+                    <h4>JavaScript</h4>
+                    <p>Interactive experiences and dynamic functionality.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🔧</div>
+                    <h4>GitHub</h4>
+                    <p>Version control and organized development.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">🚀</div>
+                    <h4>Vercel</h4>
+                    <p>Fast and reliable website deployment.</p>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon">✏️</div>
+                    <h4>Figma</h4>
+                    <p>Planning and designing polished interfaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">💼 FEATURED PROJECTS</div>
+                <h2>Ideas I've Turned Into Digital Experiences.</h2>
+                <p>A selection of websites and digital experiences created with different industries, audiences, and goals in mind.</p>
+            </div>
+
+            <div class="project-cards">
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Restaurant Website</h3>
+                        <p>A modern restaurant website designed to showcase the menu, atmosphere, services, and location while making it easy for customers to connect.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Responsive</span>
+                            <span class="meta-item">🎯 Conversion</span>
+                            <span class="meta-item">🎨 Design</span>
+                        </div>
+                        <a href="#" class="about-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Creative Portfolio</h3>
+                        <p>A bold personal portfolio designed to showcase creative work, skills, experience, and personality through a visually engaging interface.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Responsive</span>
+                            <span class="meta-item">🎯 Conversion</span>
+                            <span class="meta-item">🎨 Design</span>
+                        </div>
+                        <a href="#" class="about-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Business Website</h3>
+                        <p>A professional business website focused on clear communication, credibility, services, and lead generation.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Responsive</span>
+                            <span class="meta-item">🎯 Conversion</span>
+                        </div>
+                        <a href="#" class="about-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Product Landing Page</h3>
+                        <p>A conversion-focused landing page designed to introduce a product, communicate its value, and encourage visitors to take action.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Responsive</span>
+                            <span class="meta-item">🎯 Conversion</span>
+                            <span class="meta-item">🎨 Design</span>
+                        </div>
+                        <a href="#" class="about-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>E-Commerce Store</h3>
+                        <p>A clean online shopping experience designed around product discovery, simple navigation, and an easy customer journey.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Responsive</span>
+                            <span class="meta-item">🎯 Conversion</span>
+                        </div>
+                        <a href="#" class="about-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">Project Image</div>
+                    <div class="project-content">
+                        <h3>Dashboard / Web App</h3>
+                        <p>A functional interface designed to organize information clearly and provide users with an efficient digital experience.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📱 Responsive</span>
+                            <span class="meta-item">🎯 Conversion</span>
+                        </div>
+                        <a href="#" class="about-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MY PROCESS SECTION ==================== -->
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">🎯 MY PROCESS</div>
+                <h2>From Your Idea to a Live Website.</h2>
+                <p>A clear process keeps the project simple, transparent, and focused from beginning to launch.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">Step 01</div>
+                    <h4>First, I Understand.</h4>
+                    <p>We discuss your business, audience, goals, requirements, and the kind of website you actually need.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">Step 02</div>
+                    <h4>Then, We Build the Blueprint.</h4>
+                    <p>I organize the content, pages, features, and user journey before development begins.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">Step 03</div>
+                    <h4>Make It Look Like Your Brand.</h4>
+                    <p>I create a visual direction that matches your brand and gives visitors a clear and enjoyable experience.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">Step 04</div>
+                    <h4>Turn the Design Into Reality.</h4>
+                    <p>The approved design becomes a responsive, functional website that works across devices.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">Step 05</div>
+                    <h4>Nothing Goes Live Without a Check.</h4>
+                    <p>I test responsiveness, navigation, interactions, forms, links, and overall functionality.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">Step 06</div>
+                    <h4>Your Website Goes Live.</h4>
+                    <p>Once everything is ready, the website is deployed and prepared for your audience.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn">Let's Start →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHY WORK WITH ME SECTION ==================== -->
+    <section class="about" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">⭐ WHY WORK WITH ME</div>
+                <h2>More Than Just a Good-Looking Website.</h2>
+                <p>A website should look great — but it should also be easy to use, fast, responsive, and built around your goals.</p>
+            </div>
+
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <div class="why-content">
+                        <h4>Focused on Your Goals</h4>
+                        <p>Every design choice serves a purpose. I build websites to achieve your specific objectives.</p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">⚡</div>
+                    <div class="why-content">
+                        <h4>Fast & Performance-First</h4>
+                        <p>Your website loads quickly and performs smoothly across all devices and browsers.</p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🔒</div>
+                    <div class="why-content">
+                        <h4>Clean Code & Best Practices</h4>
+                        <p>Built with industry standards, making your site maintainable and future-proof.</p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">📱</div>
+                    <div class="why-content">
+                        <h4>100% Responsive Design</h4>
+                        <p>Perfect appearance and functionality on mobile, tablet, desktop, and all screen sizes.</p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">🤝</div>
+                    <div class="why-content">
+                        <h4>Clear Communication</h4>
+                        <p>I keep you informed throughout the project with regular updates and transparent feedback.</p>
+                    </div>
+                </div>
+
+                <div class="why-card">
+                    <div class="why-icon">✨</div>
+                    <div class="why-content">
+                        <h4>Attention to Detail</h4>
+                        <p>Every pixel, interaction, and word is carefully considered to create a polished experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TESTIMONIALS SECTION ==================== -->
+    <section class="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">💬 TESTIMONIALS</div>
+                <h2>Good Work Speaks For Itself.</h2>
+                <p>Here's what clients have to say about working together.</p>
+            </div>
+
+            <div class="testimonial-cards">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The website turned out even better than I imagined. The design feels modern, professional, and exactly like what I wanted for my business."</p>
+                    <div class="testimonial-author">— Client Name, Founder</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"The whole process was simple and easy to understand. I always knew what was happening, and the final website looks amazing on mobile and desktop."</p>
+                    <div class="testimonial-author">— Client Name, Business Owner</div>
+                </div>
+
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"What I really appreciated was the attention to detail. The website doesn't just look good — it actually feels easy to use."</p>
+                    <div class="testimonial-author">— Client Name, Creator / Freelancer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING SECTION ==================== -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">💰 PRICING</div>
+                <h2>Choose the Right Starting Point.</h2>
+                <p>Whether you need a simple online presence or a complete digital experience, there's a package to get you started.</p>
+            </div>
+
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <div class="pricing-badge">STARTER</div>
+                    <h3>Starter</h3>
+                    <div class="price">₹14,999</div>
+                    <p class="price-period">Perfect for individuals and small businesses</p>
+                    <p class="pricing-desc">Clean, professional website to get you online.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>5-8 Pages Website</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Mobile Responsive</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Contact Form</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Basic SEO</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>30 Days Support</span>
+                        </div>
+                    </div>
+                    <button class="btn" style="width: 100%;">Get Started →</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MOST POPULAR</div>
+                    <h3>Professional</h3>
+                    <div class="price">₹29,999</div>
+                    <p class="price-period">For businesses that need more functionality</p>
+                    <p class="pricing-desc">Advanced features and stronger presence.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>10-15 Pages Website</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Advanced Responsive Design</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Advanced Contact & Forms</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Blog Integration</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Analytics Setup</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>90 Days Support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Free Revisions</span>
+                        </div>
+                    </div>
+                    <button class="btn" style="width: 100%; background: white; color: var(--primary-blue);">Choose Professional →</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-badge">PREMIUM</div>
+                    <h3>Premium</h3>
+                    <div class="price">₹59,999+</div>
+                    <p class="price-period">For custom solutions & complex projects</p>
+                    <p class="pricing-desc">Custom built, tailored exactly to your needs.</p>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Unlimited Pages</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Full Custom Design</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>E-Commerce Ready</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>API Integration</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Advanced Features</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Ongoing Support</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Unlimited Revisions</span>
+                        </div>
+                    </div>
+                    <button class="btn" style="width: 100%;">Get Custom Quote →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FAQ SECTION ==================== -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">❓ FAQ</div>
+                <h2>Before We Start, You Might Be Wondering...</h2>
+            </div>
+
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>How long does it take to build a website?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most projects take 2-4 weeks depending on complexity and scope. Simple websites take 1-2 weeks, while more complex projects with e-commerce or custom features can take 4-8 weeks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What if I want to make changes after launch?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All packages include support and revision period. You can request changes during this time. After that, I offer maintenance packages to keep your website updated and running smoothly.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you design the website first or build it directly?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For larger projects, I create detailed designs in Figma that you can review and approve before I start building. For smaller projects, I may build using modern frameworks while maintaining design consistency.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Is my website SEO-friendly?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! All websites are built with SEO best practices including proper heading structure, meta tags, mobile optimization, fast loading times, and semantic HTML.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Do you provide hosting and domain services?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I can recommend reliable hosting providers and help with setup. Domain registration can be handled independently or I can assist with the process.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What happens if I don't have content ready?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No problem! I can help you organize your content, create copy, or use placeholder content while you finalize your message. We work through it together.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>Can you add new features after launch?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! I can add new features, pages, integrations, or functionality based on your evolving needs. I offer ongoing support packages for this.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>What makes you different from other web designers?</h4>
+                        <span class="faq-toggle"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>I focus on creating websites that serve a real purpose. Every design decision is tied to your goals. I combine beautiful design with clean code, responsive functionality, and genuine partnership throughout the process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-intro">
+                <div class="section-header">
+                    <div class="badge">📧 GET IN TOUCH</div>
+                    <h2>Have a Project in Mind?</h2>
+                    <p>Tell me what you're thinking. Whether you already have a complete idea or you're still figuring things out, send me the details and we'll take it from there.</p>
+                </div>
+
+                <div class="quick-actions">
+                    <a href="mailto:hello@example.com" class="btn">Email Me →</a>
+                    <a href="https://wa.me/1234567890" class="btn btn-secondary">WhatsApp</a>
+                </div>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-message" id="successMsg">✓ Thanks for reaching out! I'll get back to you soon.</div>
+                <div class="form-message error" id="errorMsg">✗ Something went wrong. Please try again.</div>
+
+                <div class="form-group">
+                    <label for="name">YOUR NAME</label>
+                    <input type="text" id="name" name="name" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">EMAIL ADDRESS</label>
+                    <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">WHATSAPP NUMBER</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+                </div>
+
+                <button type="submit" class="form-submit" id="submitBtn">
+                    <span>Send Message</span>
+                    <span>→</span>
+                </button>
+
+                <p style="text-align: center; font-size: 12px; color: var(--text-light); margin-top: 12px;">I typically respond within 24 hours</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <div class="footer-brand">
+                    <h2>Your Name</h2>
+                    <p>Freelance Web Designer & Developer helping businesses, professionals, and creators turn ideas into modern digital experiences.</p>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
+                <div class="footer-section">
+                    <div class="footer-title">QUICK LINKS</div>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Home</a>
+                        <a href="#" class="footer-link">About</a>
+                        <a href="#" class="footer-link">Services</a>
+                        <a href="#" class="footer-link">Projects</a>
+                        <a href="#" class="footer-link">Process</a>
+                        <a href="#contact" class="footer-link">Contact</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <div class="footer-title">SERVICES</div>
+                    <div class="footer-links">
+                        <a href="#" class="footer-link">Business Websites</a>
+                        <a href="#" class="footer-link">Portfolio Websites</a>
+                        <a href="#" class="footer-link">Landing Pages</a>
+                        <a href="#" class="footer-link">E-Commerce</a>
+                        <a href="#" class="footer-link">Web Applications</a>
+                        <a href="#" class="footer-link">Website Redesign</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <div class="footer-title">CONNECT</div>
+                <div class="footer-social">
+                    <a href="#" class="social-btn">Email</a>
+                    <a href="#" class="social-btn">LinkedIn</a>
+                    <a href="#" class="social-btn">GitHub</a>
+                    <a href="#" class="social-btn">Twitter</a>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Your Name. All rights reserved. Designed & Developed with care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== FORM SUBMISSION SCRIPT ==================== -->
+    <script>
+        const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw4N83mjil2KL9WqUD-T-lUi4ct5JfyEY3dncvkWpCYFgv4ir_V9sPTxKaa8DCNwGROrA/exec';
+
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const successMsg = document.getElementById('successMsg');
+        const errorMsg = document.getElementById('errorMsg');
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.closest('.faq-item');
+                item.classList.toggle('open');
+            });
+        });
+
+        // Form Submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            successMsg.classList.remove('show');
+            errorMsg.classList.remove('show');
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+
+            if (!name || !email || !phone) {
+                showError();
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>Sending...</span>';
+
+            const url = APPS_SCRIPT_URL + '?' + new URLSearchParams({
+                name: name,
+                email: email,
+                phone: phone
+            });
+
+            fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => showSuccess())
+            .catch(() => showError())
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<span>Send Message</span><span>→</span>';
+            });
+        });
+
+        function showSuccess() {
+            successMsg.classList.add('show');
+            form.reset();
+            setTimeout(() => {
+                successMsg.classList.remove('show');
+            }, 5000);
+        }
+
+        function showError() {
+            errorMsg.classList.add('show');
+            setTimeout(() => {
+                errorMsg.classList.remove('show');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
